@@ -1,0 +1,18 @@
+{
+  "name": "web-24",
+  "version": "1.0.0",
+  "description": "project for web_lab2",
+  "main": "index.js",
+  "scripts": {
+    "test": "run"
+  },
+  "keywords": [
+    "lab"
+  ],
+  "author": "vera",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^3.0.3",
+    "gulp": "^5.0.0"
+  }
+}

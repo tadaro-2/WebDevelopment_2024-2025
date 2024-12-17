@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Просмотр веб-страниц</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Просмотр веб-страниц</h1>
+        <div class="sidebar">
+            <h2>Список страниц</h2>
+            <ul>
+                <li><a href="https://ru.wikipedia.org" target="webFrame">Википедия</a></li>
+                <li><a href="https://yandex.ru" target="webFrame">Яндекс</a></li>
+                <li><a href="https://habr.com/ru/" target="webFrame">Хабр</a></li>
+            </ul>
+        </div>
+
+        <div class="input-section">
+            <label for="urlInput">Введите URL:</label>
+            <input type="text" id="urlInput" placeholder="https://example.com">
+            <button id="loadButton">Загрузить</button>
+        </div>
+
+        <div class="iframe-container">
+            <iframe id="webFrame" src="https://ru.wikipedia.org" title="Веб-страница"></iframe>
+        </div>
+    </div>
+
+    <script src="scr.js"></script>
+</body>
+</html>

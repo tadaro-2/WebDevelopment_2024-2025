@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма обратной связи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Обратная связь</h1>
+    <form id="methodSelector">
+        <label>
+            <input type="radio" name="method" value="post" checked> POST
+        </label>
+        <label>
+            <input type="radio" name="method" value="get"> GET
+        </label>
+        <button type="button" onclick="setMethod()">Выбрать метод</button>
+    </form>
+    <br>
+
+    <form id="feedbackForm" action="process.php" method="post">
+        <label for="firstName">Имя:</label>
+        <input type="text" id="firstName" name="first_name" required>
+
+        <label for="lastName">Фамилия:</label>
+        <input type="text" id="lastName" name="last_name" required>
+
+        <label for="email">Электронная почта:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label>Какие темы на нашей лекции запомнились больше всего?</label>
+        <label>
+            <input type="checkbox" name="topics[]" value="git"> Git
+        </label>
+        <label>
+            <input type="checkbox" name="topics[]" value="gulp"> Gulp
+        </label>
+        <label>
+            <input type="checkbox" name="topics[]" value="php_scripts"> PHP скрипты
+        </label>
+        <label>
+            <input type="checkbox" name="topics[]" value="get_post"> GET/POST
+        </label>
+
+        <label>Общее впечатление:</label>
+        <label>
+            <input type="radio" name="impression" value="Отлично!" required> Отлично!
+        </label>
+        <label>
+            <input type="radio" name="impression" value="Хорошо"> Хорошо
+        </label>
+        <label>
+            <input type="radio" name="impression" value="Нормально"> Нормально
+        </label>
+        <label>
+            <input type="radio" name="impression" value="Сойдёт"> Сойдёт
+        </label>
+        <label>
+            <input type="radio" name="impression" value="Ужасно"> Ужасно
+        </label>
+
+        <label>Посоветуете изучение Web друзьям?</label>
+        <label>
+            <input type="radio" name="recommendation" value="да" required> Да
+        </label>
+        <label>
+            <input type="radio" name="recommendation" value="возможно"> Возможно
+        </label>
+        <label>
+            <input type="radio" name="recommendation" value="нет"> Нет
+        </label>
+
+        <label for="feedback">Больше эмоций вы можете описать здесь:</label>
+        <textarea id="feedback" name="feedback" rows="4"></textarea>
+
+        <button type="submit">Отправить</button>
+    </form>
+
+    <script>
+        function setMethod() {
+            const method = document.querySelector('input[name="method"]:checked').value;
+            document.getElementById('feedbackForm').method = method;
+            alert('Метод отправки установлен: ' + method.toUpperCase());
+        }
+    </script>
+</body>
+</html>
